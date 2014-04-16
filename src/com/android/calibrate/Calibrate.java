@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Calibrate {
     private calibration cal;
-
+    private static final String sys_path = "/sys/module/at91_adc/parameters/";
     public Calibrate() {
         cal = new calibration();
         String strPara = String.format("%d,%d,%d,%d,%d,%d,%d", 0,
@@ -162,7 +162,7 @@ public class Calibrate {
             String[] values = strPara.split(",");
 
             if (values.length == 7) {
-                final String prefix = "/sys/module/atmel_tsadcc/parameters/";
+                final String prefix = sys_path;
                 stringToFile(prefix + "tx1", values[0]);
                 stringToFile(prefix + "ty1", values[1]);
                 stringToFile(prefix + "tz1", values[2]);
@@ -189,7 +189,7 @@ public class Calibrate {
     }
 
     static public int getRawX() {
-        String filename = "/sys/module/atmel_tsadcc/parameters/rawX";
+        String filename = sys_path + "rawX";
         String line;
         try {
             BufferedReader input = new BufferedReader(new FileReader(filename));
@@ -202,7 +202,7 @@ public class Calibrate {
     }
 
     static public int getRawY() {
-        String filename = "/sys/module/atmel_tsadcc/parameters/rawY";
+        String filename = sys_path + "rawY";
         String line;
         try {
             BufferedReader input = new BufferedReader(new FileReader(filename));
