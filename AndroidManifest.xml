@@ -13,7 +13,7 @@
         </activity>
   	<receiver android:name="BootdoneReceiver">
    		<intent-filter>
-		<action android:name="android.intent.action.BOOT_COMPLETED"></action>
+		<action android:name="android.location.MODE_CHANGED" />
 		<category android:name="android.intent.category.HOME"></category>
 		</intent-filter>
    	</receiver>
