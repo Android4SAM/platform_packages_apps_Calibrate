@@ -64,7 +64,7 @@ class ScreenDisplay {
 public class AndroidCalibrate extends Activity {
     final String TAG = "TSCalibration";
     ScreenDisplay screen;
-    final int errorMax = 50;
+    final int errorMax = 200;
     int direction;
     CrossView myview;
 
