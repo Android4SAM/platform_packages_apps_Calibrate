@@ -191,27 +191,31 @@ public class Calibrate {
     static public int getRawX() {
         String filename = sys_path + "rawX";
         String line;
+	int x = -1;
         try {
             BufferedReader input = new BufferedReader(new FileReader(filename));
             if ((line = input.readLine()) != null)
-                return Integer.parseInt(line);
+                x = Integer.parseInt(line);
+	    input.close();
         } catch (IOException e) {
             Log.i("Calibrate", "Can't get parameters raw x:" + e);
         }
-        return -1;
+        return x;
     }
 
     static public int getRawY() {
         String filename = sys_path + "rawY";
         String line;
+	int y = -1;
         try {
             BufferedReader input = new BufferedReader(new FileReader(filename));
             if ((line = input.readLine()) != null)
-                return Integer.parseInt(line);
+                y = Integer.parseInt(line);
+	    input.close();
         } catch (IOException e) {
             Log.i("Calibrate", "Can't get parameters raw Y:" + e);
         }
-        return -1;
+        return y;
     }
 
     int calibrate_main() {
