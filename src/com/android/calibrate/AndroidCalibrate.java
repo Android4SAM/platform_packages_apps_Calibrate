@@ -19,8 +19,8 @@ import android.widget.Toast;
 class ScreenDisplay {
     public int UI_SCREEN_WIDTH = 800;
     public int UI_SCREEN_HEIGHT = 480;
-    int WIDTH = 1024;
-    int HEIGHT = 1024;
+    int WIDTH = 4096;
+    int HEIGHT = 4096;
     public int xCal[] = new int[5];
     public int yCal[] = new int[5];
     public int xList[] = new int[5];
@@ -64,7 +64,7 @@ class ScreenDisplay {
 public class AndroidCalibrate extends Activity {
     final String TAG = "TSCalibration";
     ScreenDisplay screen;
-    final int errorMax = 50;
+    final int errorMax = 200;
     int direction;
     CrossView myview;
 
